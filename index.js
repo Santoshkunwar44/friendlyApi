@@ -1,7 +1,17 @@
 const express =require("express")
 require("dotenv").config()
+const cors = require("cors")
+
+
+cors({
+    origin:["http://localhost:3000"],
+    methods:["GET","PUT","POST","DELETE","OPTIONS"],
+    credentials:true
+})
+
 
 const app = express()
+
 require("./utils/db")()
 app.use(express.json())
 

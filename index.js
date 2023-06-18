@@ -4,13 +4,16 @@ const cors = require("cors")
 const app = express()
 
 
+
+app.use(
+
 cors({
     origin:"http://localhost:3000",
     methods:["GET","PUT","POST","DELETE","OPTIONS"],
     credentials:true
 })
 
-
+)
 
 require("./utils/db")()
 app.use(express.json())
